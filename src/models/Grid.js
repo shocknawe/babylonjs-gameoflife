@@ -8,8 +8,6 @@ class Grid {
     this.cellStates = [];
     this.cellStatesNext = [];
 
-    var randomBinary, cell;
-
     for (var yy = 0; yy < this.height; yy++) {
       this.cells[yy] = [];
       this.cellStates[yy] = [];
@@ -92,12 +90,12 @@ class Grid {
       } // xx for loop
     } // yy for loop
 
-    var nextState, cell;
-    for (var yy = 0; yy < this.height; yy++) {
-      for (var xx = 0; xx < this.width; xx++) {
-        nextState = this.cellStatesNext[yy][xx];
-        this.cellStates[yy][xx] = nextState;
-        this.cells[yy][xx].setCellState(nextState);
+    var nextState;
+    for (var y = 0; y < this.height; y++) {
+      for (var x = 0; x < this.width; x++) {
+        nextState = this.cellStatesNext[y][x];
+        this.cellStates[y][x] = nextState;
+        this.cells[y][x].setCellState(nextState);
       }
     }
   }

@@ -15,13 +15,13 @@ class Cell {
     this.isAlive = num === 0 ? false : true;
 
     if (this.isAlive && this.isAlivePrev) {
-      this.color = cellColors.WHITE;
-    } else if (this.isAlive && !this.isAlivePrev) {
-      this.color = cellColors.BLACKTOWHITE;
-    } else if (!this.isAlive && !this.isAlivePrev) {
       this.color = cellColors.BLACK;
-    } else if (!this.isAlive && this.isAlivePrev) {
+    } else if (this.isAlive && !this.isAlivePrev) {
       this.color = cellColors.WHITETOBLACK;
+    } else if (!this.isAlive && !this.isAlivePrev) {
+      this.color = cellColors.WHITE;
+    } else if (!this.isAlive && this.isAlivePrev) {
+      this.color = cellColors.BLACKTOWHITE;
     }
   }
 }
